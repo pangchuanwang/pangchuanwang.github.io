@@ -35,7 +35,7 @@
     }
 
     a:hover {
-      color: #1d4ed8;
+      color: #1e3a5f;
     }
 
     /* ========================================
@@ -48,7 +48,7 @@
     }
 
     /* ========================================
-       Navigation
+       Navigation — 更明显的字体与字距
        ======================================== */
     .nav {
       position: sticky;
@@ -67,33 +67,36 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 60px;
+      height: 64px;
     }
 
     .nav-brand {
-      font-size: 18px;
-      font-weight: 700;
+      font-size: 19px;
+      font-weight: 800;
       color: #1e3a5f;
+      letter-spacing: 0.5px;
     }
 
     .nav-links {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       list-style: none;
     }
 
     .nav-links a {
       display: block;
-      padding: 6px 14px;
-      font-size: 14px;
-      color: #475569;
+      padding: 8px 16px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #1e3a5f;
+      letter-spacing: 0.8px;
       border-radius: 8px;
       transition: background 0.2s, color 0.2s;
     }
 
     .nav-links a:hover {
-      background: #eef2ff;
-      color: #1e3a5f;
+      background: #e0e7ff;
+      color: #2563eb;
     }
 
     /* Mobile menu toggle */
@@ -107,16 +110,16 @@
 
     .nav-toggle span {
       display: block;
-      width: 22px;
-      height: 2px;
-      background: #475569;
+      width: 24px;
+      height: 2.5px;
+      background: #1e3a5f;
       margin: 5px 0;
       border-radius: 2px;
       transition: 0.3s;
     }
 
     /* ========================================
-       Hero Section
+       Hero Section — 左文字 + 右头像卡片
        ======================================== */
     .hero {
       padding: 72px 0 64px;
@@ -124,7 +127,7 @@
 
     .hero-inner {
       display: grid;
-      grid-template-columns: 1fr 340px;
+      grid-template-columns: 1fr 320px;
       gap: 48px;
       align-items: center;
     }
@@ -167,11 +170,35 @@
       font-weight: 500;
     }
 
-    /* Info card (right side of hero) */
+    /* 右侧卡片容器 */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    /* 头像 */
+    .avatar-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #e0e7ff;
+      box-shadow: 0 4px 20px rgba(30, 58, 95, 0.12);
+    }
+
+    /* Info card */
     .info-card {
+      width: 100%;
       background: white;
       border-radius: 16px;
-      padding: 32px;
+      padding: 28px 28px 24px;
       box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
       border: 1px solid #e5e7eb;
     }
@@ -180,7 +207,7 @@
       font-size: 15px;
       font-weight: 700;
       color: #1e3a5f;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       padding-bottom: 12px;
       border-bottom: 2px solid #e0e7ff;
     }
@@ -188,7 +215,7 @@
     .info-row {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       font-size: 14px;
     }
 
@@ -204,11 +231,11 @@
     }
 
     .info-card-links {
-      margin-top: 20px;
-      padding-top: 16px;
+      margin-top: 16px;
+      padding-top: 14px;
       border-top: 1px solid #f1f5f9;
       display: flex;
-      gap: 12px;
+      gap: 10px;
     }
 
     .info-card-links a {
@@ -217,7 +244,7 @@
       gap: 6px;
       padding: 8px 16px;
       font-size: 13px;
-      font-weight: 500;
+      font-weight: 600;
       color: #1e3a5f;
       background: #f1f5f9;
       border-radius: 8px;
@@ -226,6 +253,7 @@
 
     .info-card-links a:hover {
       background: #e0e7ff;
+      color: #2563eb;
     }
 
     /* ========================================
@@ -332,7 +360,7 @@
     }
 
     /* ========================================
-       Skills
+       Skills — hover 变深蓝 + 放大
        ======================================== */
     .skill-group {
       margin-bottom: 24px;
@@ -364,16 +392,20 @@
       background: #f1f5f9;
       border: 1px solid #e2e8f0;
       border-radius: 8px;
-      transition: background 0.2s, border-color 0.2s;
+      transition: all 0.25s ease;
+      cursor: default;
     }
 
     .skill-tag:hover {
-      background: #e0e7ff;
-      border-color: #c7d2fe;
+      background: #1e3a5f;
+      color: #fff;
+      border-color: #1e3a5f;
+      transform: scale(1.08);
+      box-shadow: 0 4px 12px rgba(30, 58, 95, 0.25);
     }
 
     /* ========================================
-       Projects
+       Projects — 卡片 + GitHub 按钮
        ======================================== */
     .project-card {
       border: 1px solid #e5e7eb;
@@ -468,6 +500,38 @@
       border-radius: 6px;
       color: #64748b;
       font-weight: 500;
+    }
+
+    /* 项目底部 GitHub 按钮 */
+    .project-link {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .project-link a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      background: #1e3a5f;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .project-link a:hover {
+      background: #2563eb;
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .project-link a svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
     }
 
     /* ========================================
@@ -616,13 +680,50 @@
     }
 
     /* ========================================
-       Footer
+       Footer — 深蓝底白字 + 社交链接
        ======================================== */
     .footer {
+      background: #1e3a5f;
+      color: #fff;
+      padding: 48px 0;
       text-align: center;
-      padding: 40px 0;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .footer-links a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.4);
+      color: #fff;
+    }
+
+    .footer-links a svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .footer-copy {
       font-size: 13px;
-      color: #94a3b8;
+      color: rgba(255, 255, 255, 0.5);
     }
 
     /* ========================================
@@ -632,7 +733,7 @@
       .nav-links {
         display: none;
         position: absolute;
-        top: 60px;
+        top: 64px;
         left: 0;
         right: 0;
         background: white;
@@ -655,8 +756,31 @@
         gap: 32px;
       }
 
+      /* 头像居中 */
+      .hero-right {
+        order: -1;
+      }
+
+      .avatar {
+        width: 140px;
+        height: 140px;
+      }
+
       .hero-name {
         font-size: 36px;
+        text-align: center;
+      }
+
+      .hero-title {
+        text-align: center;
+      }
+
+      .hero-intro {
+        text-align: center;
+      }
+
+      .hero-keywords {
+        justify-content: center;
       }
 
       .hero {
@@ -689,6 +813,12 @@
       .contact-grid {
         grid-template-columns: 1fr;
       }
+
+      .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -701,7 +831,12 @@
       }
 
       .info-card {
-        padding: 24px;
+        padding: 20px;
+      }
+
+      .avatar {
+        width: 120px;
+        height: 120px;
       }
     }
   </style>
@@ -714,10 +849,10 @@
   <nav class="nav">
     <div class="nav-inner">
       <span class="nav-brand">Pangchuan Wang</span>
-      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -734,7 +869,7 @@
        ======================================== -->
   <section class="hero">
     <div class="container hero-inner">
-      <div>
+      <div class="hero-left">
         <h1 class="hero-name">庞川旺</h1>
         <p class="hero-title">Software Engineering Graduate Student</p>
         <p class="hero-intro">
@@ -747,27 +882,32 @@
           <span>Web Development</span>
         </div>
       </div>
-      <div class="info-card">
-        <div class="info-card-title">Basic Info</div>
-        <div class="info-row">
-          <span class="info-label">学校</span>
-          <span class="info-value">东南大学 · 软件学院</span>
+      <div class="hero-right">
+        <div class="avatar-wrapper">
+          <img class="avatar" src="./证件照.PNG" alt="庞川旺证件照" />
         </div>
-        <div class="info-row">
-          <span class="info-label">专业</span>
-          <span class="info-value">软件工程（硕士）</span>
-        </div>
-        <div class="info-row">
-          <span class="info-label">本科</span>
-          <span class="info-value">应急管理大学 · 信管</span>
-        </div>
-        <div class="info-row">
-          <span class="info-label">方向</span>
-          <span class="info-value">SE / ML / Data / Web</span>
-        </div>
-        <div class="info-card-links">
-          <a href="https://github.com/pangchuanwang" target="_blank">GitHub</a>
-          <a href="mailto:pcw17331895514@163.com">Email</a>
+        <div class="info-card">
+          <div class="info-card-title">Basic Info</div>
+          <div class="info-row">
+            <span class="info-label">学校</span>
+            <span class="info-value">东南大学 · 软件学院</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">专业</span>
+            <span class="info-value">软件工程（硕士）</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">本科</span>
+            <span class="info-value">应急管理大学 · 信管</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">方向</span>
+            <span class="info-value">SE / ML / Data / Web</span>
+          </div>
+          <div class="info-card-links">
+            <a href="https://github.com/pangchuanwang" target="_blank">GitHub</a>
+            <a href="mailto:pcw17331895514@163.com">Email</a>
+          </div>
         </div>
       </div>
     </div>
@@ -944,6 +1084,12 @@
             <span>Hive</span>
             <span>Redis</span>
           </div>
+          <div class="project-link">
+            <a href="https://github.com/pangchuanwang/xxx1" target="_blank">
+              <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              View on GitHub
+            </a>
+          </div>
         </div>
 
         <!-- 项目 2 -->
@@ -970,6 +1116,12 @@
             <span>MyBatis</span>
             <span>MySQL</span>
           </div>
+          <div class="project-link">
+            <a href="https://github.com/pangchuanwang/xxx2" target="_blank">
+              <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              View on GitHub
+            </a>
+          </div>
         </div>
 
         <!-- 项目 3 -->
@@ -990,6 +1142,12 @@
           </ul>
           <div class="project-tech">
             <span>Web 前端开发</span>
+          </div>
+          <div class="project-link">
+            <a href="https://github.com/pangchuanwang/xxx3" target="_blank">
+              <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              View on GitHub
+            </a>
           </div>
         </div>
       </div>
@@ -1116,21 +1274,48 @@
   </section>
 
   <!-- ========================================
-       Footer
+       Footer — 深蓝底白字 + 社交链接
        ======================================== -->
   <footer class="footer">
     <div class="container">
-      &copy; 2026 Pangchuan Wang. Built with GitHub Pages.
+      <div class="footer-links">
+        <a href="https://github.com/pangchuanwang" target="_blank">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+        <a href="mailto:pcw17331895514@163.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Pangchuan Wang. Built with GitHub Pages.</p>
     </div>
   </footer>
 
   <!-- ========================================
-       Mobile menu close on link click
+       JS: 平滑滚动 + 移动端菜单
        ======================================== -->
   <script>
+    // 移动端汉堡菜单切换
+    document.getElementById('navToggle').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // 点击导航链接后关闭菜单
     document.querySelectorAll('.nav-links a').forEach(function(link) {
       link.addEventListener('click', function() {
-        document.querySelector('.nav-links').classList.remove('open');
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // 平滑滚动（兼容旧浏览器）
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       });
     });
   </script>
