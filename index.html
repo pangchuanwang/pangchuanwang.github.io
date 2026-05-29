@@ -3,106 +3,1137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>我的个人主页</title>
+  <title>庞川旺 | Software Engineering Graduate Student</title>
+  <meta name="description" content="庞川旺 - 东南大学软件工程硕士研究生，关注软件工程、机器学习、数据分析与 Web 系统开发。" />
   <style>
-    body {
+    /* ========================================
+       Reset & Base
+       ======================================== */
+    *, *::before, *::after {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      background: #f7f7f7;
-      color: #222;
-      line-height: 1.7;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 24px;
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 72px;
     }
 
-    .hero {
-      background: white;
-      border-radius: 24px;
-      padding: 48px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    }
-
-    h1 {
-      font-size: 44px;
-      margin: 0 0 12px;
-    }
-
-    .subtitle {
-      font-size: 20px;
-      color: #666;
-      margin-bottom: 28px;
-    }
-
-    .section {
-      background: white;
-      margin-top: 24px;
-      padding: 32px;
-      border-radius: 20px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-    }
-
-    h2 {
-      margin-top: 0;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+      background: #f4f6f9;
+      color: #2c3e50;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
-      color: #0969da;
+      color: #2563eb;
       text-decoration: none;
+      transition: color 0.2s;
     }
 
-    .tag {
-      display: inline-block;
-      padding: 6px 12px;
-      margin: 4px 6px 4px 0;
-      border-radius: 999px;
-      background: #eef2ff;
-      color: #333;
+    a:hover {
+      color: #1d4ed8;
+    }
+
+    /* ========================================
+       Layout
+       ======================================== */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ========================================
+       Navigation
+       ======================================== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-brand {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1e3a5f;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 6px 14px;
       font-size: 14px;
+      color: #475569;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      background: #eef2ff;
+      color: #1e3a5f;
+    }
+
+    /* Mobile menu toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #475569;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* ========================================
+       Hero Section
+       ======================================== */
+    .hero {
+      padding: 72px 0 64px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-name {
+      font-size: 48px;
+      font-weight: 800;
+      color: #1e3a5f;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-size: 20px;
+      color: #2563eb;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero-intro {
+      font-size: 16px;
+      color: #475569;
+      line-height: 1.8;
+    }
+
+    .hero-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .hero-keywords span {
+      display: inline-block;
+      padding: 5px 14px;
+      font-size: 13px;
+      color: #1e3a5f;
+      background: #e0e7ff;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    /* Info card (right side of hero) */
+    .info-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e5e7eb;
+    }
+
+    .info-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1e3a5f;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #e0e7ff;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+
+    .info-label {
+      flex-shrink: 0;
+      width: 72px;
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    .info-value {
+      color: #334155;
+    }
+
+    .info-card-links {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid #f1f5f9;
+      display: flex;
+      gap: 12px;
+    }
+
+    .info-card-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #1e3a5f;
+      background: #f1f5f9;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    .info-card-links a:hover {
+      background: #e0e7ff;
+    }
+
+    /* ========================================
+       Section (shared)
+       ======================================== */
+    .section {
+      padding: 56px 0;
+    }
+
+    .section-card {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e5e7eb;
+    }
+
+    .section-header {
+      margin-bottom: 32px;
+    }
+
+    .section-header h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1e3a5f;
+      margin-bottom: 4px;
+    }
+
+    .section-header .en {
+      font-size: 14px;
+      color: #94a3b8;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-divider {
+      width: 40px;
+      height: 3px;
+      background: #2563eb;
+      border-radius: 2px;
+      margin-top: 12px;
+    }
+
+    /* ========================================
+       About
+       ======================================== */
+    .about-text {
+      font-size: 16px;
+      color: #475569;
+      line-height: 1.9;
+    }
+
+    /* ========================================
+       Education
+       ======================================== */
+    .edu-item {
+      display: flex;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .edu-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .edu-item:first-child {
+      padding-top: 0;
+    }
+
+    .edu-time {
+      flex-shrink: 0;
+      width: 130px;
+      font-size: 14px;
+      color: #94a3b8;
+      font-weight: 500;
+      padding-top: 2px;
+    }
+
+    .edu-content h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1e3a5f;
+      margin-bottom: 6px;
+    }
+
+    .edu-content p {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    .edu-tag {
+      display: inline-block;
+      padding: 2px 10px;
+      font-size: 12px;
+      background: #dbeafe;
+      color: #1e40af;
+      border-radius: 4px;
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    /* ========================================
+       Skills
+       ======================================== */
+    .skill-group {
+      margin-bottom: 24px;
+    }
+
+    .skill-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-group-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1e3a5f;
+      margin-bottom: 10px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #334155;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .skill-tag:hover {
+      background: #e0e7ff;
+      border-color: #c7d2fe;
+    }
+
+    /* ========================================
+       Projects
+       ======================================== */
+    .project-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 20px;
+      transition: box-shadow 0.2s;
+    }
+
+    .project-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .project-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1e3a5f;
+    }
+
+    .project-type {
+      font-size: 12px;
+      font-weight: 600;
+      color: #2563eb;
+      background: #dbeafe;
+      padding: 3px 12px;
+      border-radius: 20px;
+      flex-shrink: 0;
+    }
+
+    .project-meta {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-bottom: 12px;
+    }
+
+    .project-desc {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .project-points {
+      list-style: none;
+      padding: 0;
+    }
+
+    .project-points li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.8;
+    }
+
+    .project-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      background: #2563eb;
+      border-radius: 50%;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    .project-tech span {
+      font-size: 12px;
+      padding: 3px 10px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    /* ========================================
+       Experience
+       ======================================== */
+    .exp-item {
+      display: flex;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .exp-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .exp-item:first-child {
+      padding-top: 0;
+    }
+
+    .exp-time {
+      flex-shrink: 0;
+      width: 130px;
+      font-size: 14px;
+      color: #94a3b8;
+      font-weight: 500;
+      padding-top: 2px;
+    }
+
+    .exp-content h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1e3a5f;
+      margin-bottom: 4px;
+    }
+
+    .exp-content .exp-sub {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+    }
+
+    .exp-content p {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.75;
+    }
+
+    /* ========================================
+       Honors
+       ======================================== */
+    .honor-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 24px;
+    }
+
+    .honor-list li {
+      position: relative;
+      padding-left: 20px;
+      font-size: 15px;
+      color: #334155;
+      line-height: 1.7;
+    }
+
+    .honor-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 8px;
+      height: 8px;
+      background: #2563eb;
+      border-radius: 50%;
+      opacity: 0.7;
+    }
+
+    /* ========================================
+       Interests
+       ======================================== */
+    .interest-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .interest-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #1e3a5f;
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 24px;
+    }
+
+    /* ========================================
+       Contact
+       ======================================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 24px;
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #dbeafe;
+      border-radius: 10px;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 12px;
+      color: #94a3b8;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .contact-value {
+      font-size: 14px;
+      color: #1e3a5f;
+      font-weight: 500;
+      word-break: break-all;
+    }
+
+    /* ========================================
+       Footer
+       ======================================== */
+    .footer {
+      text-align: center;
+      padding: 40px 0;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    /* ========================================
+       Responsive
+       ======================================== */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 12px 24px 20px;
+        border-bottom: 1px solid #e5e7eb;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .hero-name {
+        font-size: 36px;
+      }
+
+      .hero {
+        padding: 48px 0 40px;
+      }
+
+      .section {
+        padding: 40px 0;
+      }
+
+      .section-card {
+        padding: 28px 20px;
+      }
+
+      .edu-item,
+      .exp-item {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .edu-time,
+      .exp-time {
+        width: auto;
+      }
+
+      .honor-list {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-name {
+        font-size: 30px;
+      }
+
+      .hero-title {
+        font-size: 17px;
+      }
+
+      .info-card {
+        padding: 24px;
+      }
     }
   </style>
 </head>
 <body>
-  <main class="container">
-    <section class="hero">
-      <h1>你好，我是 Pangchuan Wang</h1>
-      <p class="subtitle">这里是我的个人主页。</p>
-      <p>
-        我正在学习做网站、AI 产品和个人项目。这个页面会用来展示我的作品、经历和想法。
-      </p>
-    </section>
 
-    <section class="section">
-      <h2>关于我</h2>
-      <p>
-        你可以在这里写你的自我介绍，比如你现在在做什么、感兴趣的方向、正在学习的东西。
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>我的项目</h2>
-      <ul>
-        <li>The Unapplauded：一个 AI 生成表达/叙事相关项目。</li>
-        <li>个人主页：使用 GitHub Pages 搭建的静态网站。</li>
+  <!-- ========================================
+       Navigation
+       ======================================== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="nav-brand">Pangchuan Wang</span>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#honors">Honors</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-    </section>
+    </div>
+  </nav>
 
-    <section class="section">
-      <h2>技能 / 兴趣</h2>
-      <span class="tag">AI</span>
-      <span class="tag">Web</span>
-      <span class="tag">产品</span>
-      <span class="tag">写作</span>
-    </section>
+  <!-- ========================================
+       Hero
+       ======================================== -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <h1 class="hero-name">庞川旺</h1>
+        <p class="hero-title">Software Engineering Graduate Student</p>
+        <p class="hero-intro">
+          东南大学软件工程硕士研究生，关注机器学习、数据分析与 Web 系统开发。具备 Java Web、Python 数据分析、机器学习建模和前后端分离系统开发经验。
+        </p>
+        <div class="hero-keywords">
+          <span>Software Engineering</span>
+          <span>Machine Learning</span>
+          <span>Data Analysis</span>
+          <span>Web Development</span>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">Basic Info</div>
+        <div class="info-row">
+          <span class="info-label">学校</span>
+          <span class="info-value">东南大学 · 软件学院</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">专业</span>
+          <span class="info-value">软件工程（硕士）</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">本科</span>
+          <span class="info-value">应急管理大学 · 信管</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">方向</span>
+          <span class="info-value">SE / ML / Data / Web</span>
+        </div>
+        <div class="info-card-links">
+          <a href="https://github.com/pangchuanwang" target="_blank">GitHub</a>
+          <a href="mailto:pcw17331895514@163.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="section">
-      <h2>联系我</h2>
-      <p>Email：your-email@example.com</p>
-      <p>GitHub：<a href="https://github.com/pcw2001">https://github.com/pcw2001</a></p>
-    </section>
-  </main>
+  <!-- ========================================
+       About
+       ======================================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-card">
+        <div class="section-header">
+          <h2>关于我</h2>
+          <span class="en">About</span>
+          <div class="section-divider"></div>
+        </div>
+        <p class="about-text">
+          我是庞川旺，软件工程方向硕士研究生。本科期间学习信息管理与信息系统，具备 Java、Python、Web 开发与数据分析基础。曾担任班长，并有两年部队服役经历，担任通信员兼文书，具备较强的组织协调、文字处理、执行落实和团队协作能力。目前关注软件工程、机器学习、数据分析和 AI 应用开发。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Education
+       ======================================== -->
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section-card">
+        <div class="section-header">
+          <h2>教育背景</h2>
+          <span class="en">Education</span>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-time">2026.05 - 至今</div>
+          <div class="edu-content">
+            <h3>东南大学 · 软件学院</h3>
+            <p>软件工程专业 · 硕士研究生</p>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-time">2019.09 - 2023.06</div>
+          <div class="edu-content">
+            <h3>应急管理大学 · 信息管理与信息系统</h3>
+            <p>GPA 3.64，专业前 20%</p>
+            <span class="edu-tag">校优秀毕业论文</span>
+            <p style="margin-top: 8px; font-size: 13px; color: #94a3b8;">
+              主修课程：数据结构、操作系统、Java、Web 应用程序设计、J2EE 程序设计、Python 程序设计、计算机网络、管理信息系统、大数据分析与应用
+            </p>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-time">2023.09 - 2025.09</div>
+          <div class="edu-content">
+            <h3>服役经历</h3>
+            <p>甘肃省兰州市 · 通信员兼文书</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Skills
+       ======================================== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-card">
+        <div class="section-header">
+          <h2>技术能力</h2>
+          <span class="en">Skills</span>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Programming</div>
+          <div class="skill-tags">
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Web Development</div>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Vue</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag">MyBatis</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Database & Middleware</div>
+          <div class="skill-tags">
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Hive</span>
+            <span class="skill-tag">Redis</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Data & Machine Learning</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">scikit-learn</span>
+            <span class="skill-tag">XGBoost</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Computer Science</div>
+          <div class="skill-tags">
+            <span class="skill-tag">数据结构</span>
+            <span class="skill-tag">操作系统</span>
+            <span class="skill-tag">计算机网络</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-title">Language</div>
+          <div class="skill-tags">
+            <span class="skill-tag">CET-4</span>
+            <span class="skill-tag">CET-6</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Projects
+       ======================================== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-card">
+        <div class="section-header">
+          <h2>项目经历</h2>
+          <span class="en">Projects</span>
+          <div class="section-divider"></div>
+        </div>
+
+        <!-- 项目 1 -->
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-name">电力负荷预测项目</span>
+            <span class="project-type">自学实践</span>
+          </div>
+          <div class="project-meta">2026.04 - 2026.05</div>
+          <p class="project-desc">
+            基于历史电力负荷数据构建多变量时间序列特征，使用 XGBoost 回归模型进行下一小时负荷预测，并结合网格搜索、交叉验证和可视化分析评估模型效果。
+          </p>
+          <ul class="project-points">
+            <li>构建前 1 小时、前 2 小时、昨日同时间段等时间序列特征</li>
+            <li>使用 Python + XGBoost 训练回归模型</li>
+            <li>结合网格搜索和交叉验证优化模型参数</li>
+            <li>支持 MySQL、Hive、Redis 数据接口，提升系统可复用性与扩展性</li>
+          </ul>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>XGBoost</span>
+            <span>时间序列预测</span>
+            <span>MySQL</span>
+            <span>Hive</span>
+            <span>Redis</span>
+          </div>
+        </div>
+
+        <!-- 项目 2 -->
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-name">安全培训考试信息管理平台</span>
+            <span class="project-type">本科毕设</span>
+          </div>
+          <div class="project-meta">2023.02 - 2023.06</div>
+          <p class="project-desc">
+            设计并开发基于 B/S 架构、前后端分离的安全培训考试信息管理系统，实现用户管理、课程管理、试题管理、成绩管理等功能。该项目被评为校优秀毕业论文。
+          </p>
+          <ul class="project-points">
+            <li>采用前后端分离架构</li>
+            <li>实现用户管理、课程管理、试题管理、成绩管理等模块</li>
+            <li>使用 MySQL 进行数据管理</li>
+            <li>系统具备较好的实用性和可扩展性</li>
+          </ul>
+          <div class="project-tech">
+            <span>Java</span>
+            <span>Vue</span>
+            <span>Node.js</span>
+            <span>Spring Boot</span>
+            <span>MyBatis</span>
+            <span>MySQL</span>
+          </div>
+        </div>
+
+        <!-- 项目 3 -->
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-name">基于 Web 的民食传承平台</span>
+            <span class="project-type">省级科创</span>
+          </div>
+          <div class="project-meta">2022.02 - 2022.06 · 团队组长 / Web 前端开发</div>
+          <p class="project-desc">
+            河北省大学生科技创新项目。负责前端界面设计与开发，将设计稿转化为可交互用户界面，协作后端完成数据交互与页面动态展示。平台用于展示民间食物文化资源，支持用户分享与交流。
+          </p>
+          <ul class="project-points">
+            <li>负责前端页面设计与开发</li>
+            <li>协作后端实现数据交互</li>
+            <li>推动团队完成项目功能落地</li>
+            <li>提升文化资源展示与传播效果</li>
+          </ul>
+          <div class="project-tech">
+            <span>Web 前端开发</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Experience
+       ======================================== -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-card">
+        <div class="section-header">
+          <h2>经历</h2>
+          <span class="en">Experience</span>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-time">2019.09 - 2023.06</div>
+          <div class="exp-content">
+            <h3>本科班长</h3>
+            <div class="exp-sub">信管 B191 班</div>
+            <p>
+              本科期间担任班长，负责班级组织管理、沟通协调、班会和班级活动组织，参与学校文化活动和志愿服务。曾获校优秀学生干部、校优秀共产党员、校优秀毕业生等荣誉。
+            </p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-time">2023.09 - 2025.09</div>
+          <div class="exp-content">
+            <h3>通信员兼文书</h3>
+            <div class="exp-sub">服役经历 · 甘肃省兰州市</div>
+            <p>
+              服役期间担任通信员兼文书，负责日常文书、通信协调、活动保障与组织执行工作。参与多项主题教育、表彰、迎新等活动的策划与保障，锻炼了严谨细致的工作习惯、执行能力和团队协作能力。2025 年荣获"四有优秀士兵"并获得嘉奖。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Honors
+       ======================================== -->
+  <section class="section" id="honors">
+    <div class="container">
+      <div class="section-card">
+        <div class="section-header">
+          <h2>荣誉奖项</h2>
+          <span class="en">Honors</span>
+          <div class="section-divider"></div>
+        </div>
+
+        <ul class="honor-list">
+          <li>校优秀毕业生</li>
+          <li>校优秀共产党员</li>
+          <li>校优秀学生干部</li>
+          <li>多次获得校优秀学生奖学金</li>
+          <li>全国竞赛省级单项奖学金</li>
+          <li>"四有优秀士兵"并获得嘉奖</li>
+          <li>军体运动会"双杠"项目第三名</li>
+          <li>校优秀毕业论文</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Interests
+       ======================================== -->
+  <section class="section" id="interests">
+    <div class="container">
+      <div class="section-card">
+        <div class="section-header">
+          <h2>兴趣爱好</h2>
+          <span class="en">Interests</span>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="interest-tags">
+          <span class="interest-tag">健身</span>
+          <span class="interest-tag">长跑</span>
+          <span class="interest-tag">半马 1h40min</span>
+          <span class="interest-tag">户外登山徒步</span>
+          <span class="interest-tag">羽毛球</span>
+          <span class="interest-tag">游泳</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Contact
+       ======================================== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-card">
+        <div class="section-header">
+          <h2>联系方式</h2>
+          <span class="en">Contact</span>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="contact-icon">&#9993;</div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">pcw17331895514 [at] 163.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">&#128187;</div>
+            <div>
+              <div class="contact-label">GitHub</div>
+              <div class="contact-value"><a href="https://github.com/pangchuanwang" target="_blank">github.com/pangchuanwang</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Footer
+       ======================================== -->
+  <footer class="footer">
+    <div class="container">
+      &copy; 2026 Pangchuan Wang. Built with GitHub Pages.
+    </div>
+  </footer>
+
+  <!-- ========================================
+       Mobile menu close on link click
+       ======================================== -->
+  <script>
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.remove('open');
+      });
+    });
+  </script>
+
 </body>
 </html>
