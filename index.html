@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>庞川旺 | Software Engineering Graduate Student</title>
-  <meta name="description" content="庞川旺 - 东南大学软件工程硕士研究生，关注软件工程、机器学习、数据分析与 Web 系统开发。" />
+  <title>Pangchuan Wang | Software Engineering Graduate Student</title>
+  <meta name="description" content="Pangchuan Wang - Software Engineering graduate student at Southeast University, focused on machine learning, data analysis, and web development." />
   <style>
     /* ========================================
        Reset & Base
@@ -48,7 +48,7 @@
     }
 
     /* ========================================
-       Navigation — 更明显的字体与字距
+       Navigation
        ======================================== */
     .nav {
       position: sticky;
@@ -77,6 +77,12 @@
       letter-spacing: 0.5px;
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
     .nav-links {
       display: flex;
       gap: 6px;
@@ -99,6 +105,36 @@
       color: #2563eb;
     }
 
+    /* Language Toggle */
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .lang-toggle button {
+      padding: 5px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #64748b;
+      background: #f8fafc;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .lang-toggle button:first-child {
+      border-right: 1px solid #e2e8f0;
+    }
+
+    .lang-toggle button.active {
+      background: #1e3a5f;
+      color: #fff;
+    }
+
     /* Mobile menu toggle */
     .nav-toggle {
       display: none;
@@ -119,7 +155,7 @@
     }
 
     /* ========================================
-       Hero Section — 左文字 + 右头像卡片
+       Hero Section
        ======================================== */
     .hero {
       padding: 72px 0 64px;
@@ -170,7 +206,6 @@
       font-weight: 500;
     }
 
-    /* 右侧卡片容器 */
     .hero-right {
       display: flex;
       flex-direction: column;
@@ -178,7 +213,6 @@
       gap: 24px;
     }
 
-    /* 头像 — 证件照卡片样式 3:4 */
     .avatar-wrapper {
       display: flex;
       justify-content: center;
@@ -194,7 +228,6 @@
       box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
     }
 
-    /* Info card */
     .info-card {
       width: 100%;
       background: white;
@@ -361,7 +394,7 @@
     }
 
     /* ========================================
-       Skills — hover 变深蓝 + 放大
+       Skills
        ======================================== */
     .skill-group {
       margin-bottom: 24px;
@@ -406,7 +439,7 @@
     }
 
     /* ========================================
-       Projects — 卡片 + GitHub 按钮
+       Projects
        ======================================== */
     .project-card {
       border: 1px solid #e5e7eb;
@@ -503,7 +536,6 @@
       font-weight: 500;
     }
 
-    /* 项目底部按钮区域 */
     .project-link {
       margin-top: 18px;
       padding-top: 16px;
@@ -701,7 +733,7 @@
     }
 
     /* ========================================
-       Footer — 深蓝底白字 + 社交链接
+       Footer
        ======================================== */
     .footer {
       background: #1e3a5f;
@@ -751,6 +783,10 @@
        Responsive
        ======================================== */
     @media (max-width: 768px) {
+      .nav-right {
+        gap: 10px;
+      }
+
       .nav-links {
         display: none;
         position: absolute;
@@ -777,7 +813,6 @@
         gap: 32px;
       }
 
-      /* 头像居中 */
       .hero-right {
         order: -1;
       }
@@ -859,73 +894,15 @@
         width: 160px;
         height: 213px;
       }
-    }
-    /* ========================================
-       Language Toggle (Projects bilingual)
-       ======================================== */
-    .lang-toggle {
-      display: inline-flex;
-      align-items: center;
-      gap: 0;
-      margin-left: 16px;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      overflow: hidden;
-      vertical-align: middle;
-    }
 
-    .lang-toggle button {
-      padding: 5px 14px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #64748b;
-      background: #f8fafc;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
+      .lang-toggle button {
+        padding: 4px 8px;
+        font-size: 12px;
+      }
     }
-
-    .lang-toggle button:first-child {
-      border-right: 1px solid #e2e8f0;
-    }
-
-    .lang-toggle button.active {
-      background: #1e3a5f;
-      color: #fff;
-    }
-
-    .lang-en {
-      display: none;
-    }
-
-    body.lang-en .lang-en {
-      display: block;
-    }
-
-    body.lang-en .lang-zh {
-      display: none;
-    }
-
-    /* inline elements (span inside li, project-type, project-meta) */
-    body.lang-en .project-card.bilingual .lang-en {
-      display: inline;
-    }
-
-    body.lang-en .project-card.bilingual .lang-zh {
-      display: none;
-    }
-
-    body.lang-en .project-card.bilingual ul.lang-en {
-      display: block;
-    }
-
-    body.lang-en .project-card.bilingual p.lang-en {
-      display: block;
-    }
-
   </style>
 </head>
-<body>
+<body data-lang="en">
 
   <!-- ========================================
        Navigation
@@ -933,18 +910,24 @@
   <nav class="nav">
     <div class="nav-inner">
       <span class="nav-brand">Pangchuan Wang</span>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#honors">Honors</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about" data-en="About" data-zh="关于我">About</a></li>
+          <li><a href="#education" data-en="Education" data-zh="教育背景">Education</a></li>
+          <li><a href="#skills" data-en="Skills" data-zh="技术能力">Skills</a></li>
+          <li><a href="#projects" data-en="Projects" data-zh="项目经历">Projects</a></li>
+          <li><a href="#experience" data-en="Experience" data-zh="经历">Experience</a></li>
+          <li><a href="#honors" data-en="Honors" data-zh="荣誉奖项">Honors</a></li>
+          <li><a href="#contact" data-en="Contact" data-zh="联系方式">Contact</a></li>
+        </ul>
+        <div class="lang-toggle">
+          <button class="active" onclick="switchLang('en')">EN</button>
+          <button onclick="switchLang('zh')">中文</button>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -954,11 +937,9 @@
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-left">
-        <h1 class="hero-name">庞川旺</h1>
-        <p class="hero-title">Software Engineering Graduate Student</p>
-        <p class="hero-intro">
-          东南大学软件工程硕士研究生，关注机器学习、数据分析、AI Web App 与全栈开发。具备 Java Web、Python 数据分析、机器学习建模和前后端分离系统开发经验，正在通过个人开源项目持续提升产品设计与工程实现能力。
-        </p>
+        <h1 class="hero-name" data-en="Pangchuan Wang" data-zh="庞川旺">Pangchuan Wang</h1>
+        <p class="hero-title" data-en="Software Engineering Graduate Student" data-zh="软件工程硕士研究生">Software Engineering Graduate Student</p>
+        <p class="hero-intro" data-en="Graduate student in Software Engineering at Southeast University, focused on machine learning, data analysis, AI Web Apps, and full-stack development. Experienced in Java Web, Python data analysis, ML modeling, and front-back-end separated system development. Continuously improving product design and engineering skills through personal open-source projects." data-zh="东南大学软件工程硕士研究生，关注机器学习、数据分析、AI Web App 与全栈开发。具备 Java Web、Python 数据分析、机器学习建模和前后端分离系统开发经验，正在通过个人开源项目持续提升产品设计与工程实现能力。">Graduate student in Software Engineering at Southeast University, focused on machine learning, data analysis, AI Web Apps, and full-stack development. Experienced in Java Web, Python data analysis, ML modeling, and front-back-end separated system development. Continuously improving product design and engineering skills through personal open-source projects.</p>
         <div class="hero-keywords">
           <span>Software Engineering</span>
           <span>Machine Learning</span>
@@ -968,24 +949,24 @@
       </div>
       <div class="hero-right">
         <div class="avatar-wrapper">
-          <img class="avatar" src="./证件照.PNG" alt="庞川旺证件照" />
+          <img class="avatar" src="./证件照.PNG" alt="Pangchuan Wang" />
         </div>
         <div class="info-card">
-          <div class="info-card-title">Basic Info</div>
+          <div class="info-card-title" data-en="Basic Info" data-zh="基本信息">Basic Info</div>
           <div class="info-row">
-            <span class="info-label">学校</span>
-            <span class="info-value">东南大学 · 软件学院</span>
+            <span class="info-label" data-en="School" data-zh="学校">School</span>
+            <span class="info-value" data-en="Southeast University" data-zh="东南大学 · 软件学院">Southeast University</span>
           </div>
           <div class="info-row">
-            <span class="info-label">专业</span>
-            <span class="info-value">软件工程（硕士）</span>
+            <span class="info-label" data-en="Major" data-zh="专业">Major</span>
+            <span class="info-value" data-en="Software Engineering (M.S.)" data-zh="软件工程（硕士）">Software Engineering (M.S.)</span>
           </div>
           <div class="info-row">
-            <span class="info-label">本科</span>
-            <span class="info-value">应急管理大学 · 信管</span>
+            <span class="info-label" data-en="B.S." data-zh="本科">B.S.</span>
+            <span class="info-value" data-en="Emergency Management Univ. — Information Management" data-zh="应急管理大学 · 信管">Emergency Management Univ. — Information Management</span>
           </div>
           <div class="info-row">
-            <span class="info-label">方向</span>
+            <span class="info-label" data-en="Focus" data-zh="方向">Focus</span>
             <span class="info-value">SE / ML / Data / Web</span>
           </div>
           <div class="info-card-links">
@@ -1004,13 +985,10 @@
     <div class="container">
       <div class="section-card">
         <div class="section-header">
-          <h2>关于我</h2>
-          <span class="en">About</span>
+          <h2 data-en="About Me" data-zh="关于我">About Me</h2>
           <div class="section-divider"></div>
         </div>
-        <p class="about-text">
-          我是庞川旺，软件工程方向硕士研究生。本科期间学习信息管理与信息系统，具备 Java、Python、Web 开发与数据分析基础。曾担任班长，并有两年部队服役经历，担任通信员兼文书，具备较强的组织协调、文字处理、执行落实和团队协作能力。目前关注软件工程、机器学习、数据分析、AI Web App 与全栈 Web 开发，正在通过个人开源项目持续提升产品设计与工程实现能力。
-        </p>
+        <p class="about-text" data-en="I am Pangchuan Wang, a graduate student in Software Engineering. During my undergraduate studies in Information Management and Information Systems, I built a solid foundation in Java, Python, web development, and data analysis. I served as class monitor throughout college and completed two years of military service as a communication specialist and clerk, which strengthened my skills in organization, written communication, execution, and teamwork. My current interests include software engineering, machine learning, data analysis, AI Web Apps, and full-stack development. I am continuously improving my product design and engineering capabilities through personal open-source projects." data-zh="我是庞川旺，软件工程方向硕士研究生。本科期间学习信息管理与信息系统，具备 Java、Python、Web 开发与数据分析基础。曾担任班长，并有两年部队服役经历，担任通信员兼文书，具备较强的组织协调、文字处理、执行落实和团队协作能力。目前关注软件工程、机器学习、数据分析、AI Web App 与全栈 Web 开发，正在通过个人开源项目持续提升产品设计与工程实现能力。">I am Pangchuan Wang, a graduate student in Software Engineering. During my undergraduate studies in Information Management and Information Systems, I built a solid foundation in Java, Python, web development, and data analysis. I served as class monitor throughout college and completed two years of military service as a communication specialist and clerk, which strengthened my skills in organization, written communication, execution, and teamwork. My current interests include software engineering, machine learning, data analysis, AI Web Apps, and full-stack development. I am continuously improving my product design and engineering capabilities through personal open-source projects.</p>
       </div>
     </div>
   </section>
@@ -1022,36 +1000,33 @@
     <div class="container">
       <div class="section-card">
         <div class="section-header">
-          <h2>教育背景</h2>
-          <span class="en">Education</span>
+          <h2 data-en="Education" data-zh="教育背景">Education</h2>
           <div class="section-divider"></div>
         </div>
 
         <div class="edu-item">
-          <div class="edu-time">2026.05 - 至今</div>
+          <div class="edu-time">2026.05 - <span data-en="Present" data-zh="至今">Present</span></div>
           <div class="edu-content">
-            <h3>东南大学 · 软件学院</h3>
-            <p>软件工程专业 · 硕士研究生</p>
+            <h3 data-en="Southeast University — School of Software Engineering" data-zh="东南大学 · 软件学院">Southeast University — School of Software Engineering</h3>
+            <p data-en="M.S. in Software Engineering" data-zh="软件工程专业 · 硕士研究生">M.S. in Software Engineering</p>
           </div>
         </div>
 
         <div class="edu-item">
           <div class="edu-time">2019.09 - 2023.06</div>
           <div class="edu-content">
-            <h3>应急管理大学 · 信息管理与信息系统</h3>
-            <p>GPA 3.64，专业前 20%</p>
-            <span class="edu-tag">校优秀毕业论文</span>
-            <p style="margin-top: 8px; font-size: 13px; color: #94a3b8;">
-              主修课程：数据结构、操作系统、Java、Web 应用程序设计、J2EE 程序设计、Python 程序设计、计算机网络、管理信息系统、大数据分析与应用
-            </p>
+            <h3 data-en="Emergency Management University — Information Management & Information Systems" data-zh="应急管理大学 · 信息管理与信息系统">Emergency Management University — Information Management & Information Systems</h3>
+            <p data-en="GPA 3.64, Top 20% in major" data-zh="GPA 3.64，专业前 20%">GPA 3.64, Top 20% in major</p>
+            <span class="edu-tag" data-en="Outstanding Thesis" data-zh="校优秀毕业论文">Outstanding Thesis</span>
+            <p style="margin-top: 8px; font-size: 13px; color: #94a3b8;" data-en="Core courses: Data Structures, Operating Systems, Java, Web Application Design, J2EE, Python Programming, Computer Networks, Management Information Systems, Big Data Analytics" data-zh="主修课程：数据结构、操作系统、Java、Web 应用程序设计、J2EE 程序设计、Python 程序设计、计算机网络、管理信息系统、大数据分析与应用">Core courses: Data Structures, Operating Systems, Java, Web Application Design, J2EE, Python Programming, Computer Networks, Management Information Systems, Big Data Analytics</p>
           </div>
         </div>
 
         <div class="edu-item">
           <div class="edu-time">2023.09 - 2025.09</div>
           <div class="edu-content">
-            <h3>服役经历</h3>
-            <p>甘肃省兰州市 · 通信员兼文书</p>
+            <h3 data-en="Military Service" data-zh="服役经历">Military Service</h3>
+            <p data-en="Lanzhou, Gansu — Communication Specialist & Clerk" data-zh="甘肃省兰州市 · 通信员兼文书">Lanzhou, Gansu — Communication Specialist & Clerk</p>
           </div>
         </div>
       </div>
@@ -1065,8 +1040,7 @@
     <div class="container">
       <div class="section-card">
         <div class="section-header">
-          <h2>技术能力</h2>
-          <span class="en">Skills</span>
+          <h2 data-en="Technical Skills" data-zh="技术能力">Technical Skills</h2>
           <div class="section-divider"></div>
         </div>
 
@@ -1115,9 +1089,9 @@
         <div class="skill-group">
           <div class="skill-group-title">Computer Science</div>
           <div class="skill-tags">
-            <span class="skill-tag">数据结构</span>
-            <span class="skill-tag">操作系统</span>
-            <span class="skill-tag">计算机网络</span>
+            <span class="skill-tag" data-en="Data Structures" data-zh="数据结构">Data Structures</span>
+            <span class="skill-tag" data-en="Operating Systems" data-zh="操作系统">Operating Systems</span>
+            <span class="skill-tag" data-en="Computer Networks" data-zh="计算机网络">Computer Networks</span>
           </div>
         </div>
 
@@ -1139,39 +1113,25 @@
     <div class="container">
       <div class="section-card">
         <div class="section-header">
-          <h2>项目经历 <span class="lang-toggle"><button class="active" onclick="switchLang('zh')">简体中文</button><button onclick="switchLang('en')">English</button></span></h2>
-          <span class="en">Projects</span>
+          <h2 data-en="Projects" data-zh="项目经历">Projects</h2>
           <div class="section-divider"></div>
         </div>
 
-        <!-- 项目 0 — The Unapplauded (bilingual) -->
-        <div class="project-card bilingual">
+        <!-- The Unapplauded -->
+        <div class="project-card">
           <div class="project-top">
-            <span class="project-name">The Unapplauded｜<span class="lang-zh">普通胜利博物馆</span><span class="lang-en">Museum for Ordinary Victories</span></span>
-            <span class="project-type"><span class="lang-zh">个人开源项目</span><span class="lang-en">Open Source</span></span>
+            <span class="project-name">The Unapplauded｜<span data-en="Museum for Ordinary Victories" data-zh="普通胜利博物馆">Museum for Ordinary Victories</span></span>
+            <span class="project-type" data-en="Open Source" data-zh="个人开源项目">Open Source</span>
           </div>
-          <div class="project-meta">2026.05 - <span class="lang-zh">至今</span><span class="lang-en">Present</span> · AI Web App</div>
-          <p class="project-desc lang-zh">
-            The Unapplauded 是一个 AI 驱动的个人博物馆应用，将用户日常生活中普通但值得被看见的小成就转化为"博物馆展品"。用户输入一件小事后，系统会生成展品标题、展厅分类、材质、展签和策展人笔记，并保存到个人博物馆墙中。
-          </p>
-          <p class="project-desc lang-en">
-            The Unapplauded is an AI-powered personal museum that turns small everyday victories into museum-style exhibits. Users can write down an ordinary but meaningful moment, and the system generates an exhibit title, hall category, material, label, and curator note, then saves it to a personal museum wall.
-          </p>
-          <ul class="project-points lang-zh">
-            <li>使用 Next.js App Router、React 和 TypeScript 构建前端应用</li>
-            <li>集成 MiMo AI，通过服务端 API Route 生成展品文案</li>
-            <li>无 API Key 或接口异常时自动回退到本地模板，保证应用可用性</li>
-            <li>使用 localStorage 实现无需登录的本地个人收藏</li>
-            <li>支持展品预览、换一种呈现、保存、详情查看和删除</li>
-            <li>支持 PWA 安装，并部署至 Vercel</li>
-          </ul>
-          <ul class="project-points lang-en">
-            <li>Built with Next.js App Router, React, and TypeScript</li>
-            <li>Integrated MiMo AI through a server-side API route for exhibit text generation</li>
-            <li>Provides a local template fallback when the API key is missing or the AI request fails</li>
-            <li>Uses localStorage to support personal collections without user login</li>
-            <li>Supports previewing, regenerating, saving, viewing details, and deleting exhibits</li>
-            <li>Supports PWA installation and is deployed on Vercel</li>
+          <div class="project-meta">2026.05 - <span data-en="Present" data-zh="至今">Present</span> · AI Web App</div>
+          <p class="project-desc" data-en="The Unapplauded is an AI-powered personal museum that turns small everyday victories into museum-style exhibits. Users can write down an ordinary but meaningful moment, and the system generates an exhibit title, hall category, material, label, and curator note, then saves it to a personal museum wall." data-zh="The Unapplauded 是一个 AI 驱动的个人博物馆应用，将用户日常生活中普通但值得被看见的小成就转化为"博物馆展品"。用户输入一件小事后，系统会生成展品标题、展厅分类、材质、展签和策展人笔记，并保存到个人博物馆墙中。">The Unapplauded is an AI-powered personal museum that turns small everyday victories into museum-style exhibits. Users can write down an ordinary but meaningful moment, and the system generates an exhibit title, hall category, material, label, and curator note, then saves it to a personal museum wall.</p>
+          <ul class="project-points">
+            <li data-en="Built with Next.js App Router, React, and TypeScript" data-zh="使用 Next.js App Router、React 和 TypeScript 构建前端应用">Built with Next.js App Router, React, and TypeScript</li>
+            <li data-en="Integrated MiMo AI through a server-side API route for exhibit text generation" data-zh="集成 MiMo AI，通过服务端 API Route 生成展品文案">Integrated MiMo AI through a server-side API route for exhibit text generation</li>
+            <li data-en="Provides a local template fallback when the API key is missing or the AI request fails" data-zh="无 API Key 或接口异常时自动回退到本地模板，保证应用可用性">Provides a local template fallback when the API key is missing or the AI request fails</li>
+            <li data-en="Uses localStorage to support personal collections without user login" data-zh="使用 localStorage 实现无需登录的本地个人收藏">Uses localStorage to support personal collections without user login</li>
+            <li data-en="Supports previewing, regenerating, saving, viewing details, and deleting exhibits" data-zh="支持展品预览、换一种呈现、保存、详情查看和删除">Supports previewing, regenerating, saving, viewing details, and deleting exhibits</li>
+            <li data-en="Supports PWA installation and is deployed on Vercel" data-zh="支持 PWA 安装，并部署至 Vercel">Supports PWA installation and is deployed on Vercel</li>
           </ul>
           <div class="project-tech">
             <span>Next.js</span>
@@ -1195,34 +1155,21 @@
           </div>
         </div>
 
-        <!-- 项目 0.5 — ProbAI-Tool (bilingual) -->
-        <div class="project-card bilingual">
+        <!-- ProbAI-Tool -->
+        <div class="project-card">
           <div class="project-top">
-            <span class="project-name">ProbAI-Tool｜<span class="lang-zh">大乐透分析与预测工具</span><span class="lang-en">DLT Trend Analysis &amp; Prediction Tool</span></span>
-            <span class="project-type"><span class="lang-zh">个人开源项目</span><span class="lang-en">Open Source</span></span>
+            <span class="project-name">ProbAI-Tool｜<span data-en="DLT Trend Analysis & Prediction Tool" data-zh="大乐透分析与预测工具">DLT Trend Analysis & Prediction Tool</span></span>
+            <span class="project-type" data-en="Open Source" data-zh="个人开源项目">Open Source</span>
           </div>
-          <div class="project-meta">2026.05 - <span class="lang-zh">至今</span><span class="lang-en">Present</span> · AI Tool</div>
-          <p class="project-desc lang-zh">
-            基于 Flask + scikit-learn 的大乐透走势分析与多策略预测工具。从新浪彩票实时抓取开奖数据，通过规则引擎和机器学习模型进行多维度号码评分、结构预测和组合生成，支持 8 种预测玩法、回测验证和选号记录管理。
-          </p>
-          <p class="project-desc lang-en">
-            A lottery trend analysis and multi-strategy prediction tool built with Flask and scikit-learn. It scrapes real-time draw data from Sina, applies a rule engine and ML models for multi-dimensional number scoring, structure prediction, and combination generation, supporting 8 prediction modes, backtesting, and play history management.
-          </p>
-          <ul class="project-points lang-zh">
-            <li>实现 8 种预测玩法：基础筛选、形态约束、杀号、胆拖、分区建模、多策略对冲、回测、ML 评分</li>
-            <li>ML 管线：Logistic Regression 基线 + HistGradientBoosting 主模型 + RandomForest 结构分类器</li>
-            <li>16 维单号特征 + 13 维结构特征工程，模型按期次缓存至磁盘（joblib）</li>
-            <li>滚动窗口回测对比四种方案的稳定性与命中表现</li>
-            <li>SQLite 存储选号记录，支持收藏、差异对比和开奖后自动结算</li>
-            <li>提供 JSON API 接口，支持走势数据和预测结果的程序化访问</li>
-          </ul>
-          <ul class="project-points lang-en">
-            <li>Implements 8 prediction modes: basic filtering, shape constraints, number killing, dan-tuo, partition modeling, multi-strategy hedging, backtesting, and ML scoring</li>
-            <li>ML pipeline: Logistic Regression baseline + HistGradientBoosting main model + RandomForest structure classifier</li>
-            <li>16-dimensional per-number features + 13-dimensional structure features, with per-issue model caching via joblib</li>
-            <li>Rolling-window backtesting compares stability and hit performance across four strategies</li>
-            <li>SQLite stores play history with favorites, diff comparison, and post-draw auto-settlement</li>
-            <li>Provides JSON API endpoints for programmatic access to trend data and predictions</li>
+          <div class="project-meta">2026.05 - <span data-en="Present" data-zh="至今">Present</span> · AI Tool</div>
+          <p class="project-desc" data-en="A lottery trend analysis and multi-strategy prediction tool built with Flask and scikit-learn. It scrapes real-time draw data from Sina, applies a rule engine and ML models for multi-dimensional number scoring, structure prediction, and combination generation, supporting 8 prediction modes, backtesting, and play history management." data-zh="基于 Flask + scikit-learn 的大乐透走势分析与多策略预测工具。从新浪彩票实时抓取开奖数据，通过规则引擎和机器学习模型进行多维度号码评分、结构预测和组合生成，支持 8 种预测玩法、回测验证和选号记录管理。">A lottery trend analysis and multi-strategy prediction tool built with Flask and scikit-learn. It scrapes real-time draw data from Sina, applies a rule engine and ML models for multi-dimensional number scoring, structure prediction, and combination generation, supporting 8 prediction modes, backtesting, and play history management.</p>
+          <ul class="project-points">
+            <li data-en="Implements 8 prediction modes: basic filtering, shape constraints, number killing, dan-tuo, partition modeling, multi-strategy hedging, backtesting, and ML scoring" data-zh="实现 8 种预测玩法：基础筛选、形态约束、杀号、胆拖、分区建模、多策略对冲、回测、ML 评分">Implements 8 prediction modes: basic filtering, shape constraints, number killing, dan-tuo, partition modeling, multi-strategy hedging, backtesting, and ML scoring</li>
+            <li data-en="ML pipeline: Logistic Regression baseline + HistGradientBoosting main model + RandomForest structure classifier" data-zh="ML 管线：Logistic Regression 基线 + HistGradientBoosting 主模型 + RandomForest 结构分类器">ML pipeline: Logistic Regression baseline + HistGradientBoosting main model + RandomForest structure classifier</li>
+            <li data-en="16-dimensional per-number features + 13-dimensional structure features, with per-issue model caching via joblib" data-zh="16 维单号特征 + 13 维结构特征工程，模型按期次缓存至磁盘（joblib）">16-dimensional per-number features + 13-dimensional structure features, with per-issue model caching via joblib</li>
+            <li data-en="Rolling-window backtesting compares stability and hit performance across four strategies" data-zh="滚动窗口回测对比四种方案的稳定性与命中表现">Rolling-window backtesting compares stability and hit performance across four strategies</li>
+            <li data-en="SQLite stores play history with favorites, diff comparison, and post-draw auto-settlement" data-zh="SQLite 存储选号记录，支持收藏、差异对比和开奖后自动结算">SQLite stores play history with favorites, diff comparison, and post-draw auto-settlement</li>
+            <li data-en="Provides JSON API endpoints for programmatic access to trend data and predictions" data-zh="提供 JSON API 接口，支持走势数据和预测结果的程序化访问">Provides JSON API endpoints for programmatic access to trend data and predictions</li>
           </ul>
           <div class="project-tech">
             <span>Python</span>
@@ -1241,34 +1188,21 @@
           </div>
         </div>
 
-        <!-- 项目 0.6 — taobao-coin-bot (bilingual) -->
-        <div class="project-card bilingual">
+        <!-- taobao-coin-bot -->
+        <div class="project-card">
           <div class="project-top">
-            <span class="project-name">taobao-coin-bot｜<span class="lang-zh">淘金币自动任务工具</span><span class="lang-en">Taobao Coin Task Automation</span></span>
-            <span class="project-type"><span class="lang-zh">个人开源项目</span><span class="lang-en">Open Source</span></span>
+            <span class="project-name">taobao-coin-bot｜<span data-en="Taobao Coin Task Automation" data-zh="淘金币自动任务工具">Taobao Coin Task Automation</span></span>
+            <span class="project-type" data-en="Open Source" data-zh="个人开源项目">Open Source</span>
           </div>
-          <div class="project-meta">2025.05 - <span class="lang-zh">至今</span><span class="lang-en">Present</span> · Automation Tool</div>
-          <p class="project-desc lang-zh">
-            基于 uiautomator2 的安卓 UI 自动化工具，用于自动完成淘宝淘金币日常任务。工具通过 ADB 远程控制安卓手机，支持任务自动发现、优先级评分、执行验证、学习优化和每日报告生成，可辅助完成浏览、签到、答题等重复性任务。
-          </p>
-          <p class="project-desc lang-en">
-            An Android UI automation tool built with uiautomator2 for automating daily Taobao Coin tasks. It controls an Android device through ADB and supports task discovery, priority scoring, execution verification, learning-based optimization, and daily report generation for repetitive tasks such as browsing, check-ins, and quizzes.
-          </p>
-          <ul class="project-points lang-zh">
-            <li>通过 ADB + uiautomator2 实现安卓 UI 自动化，控制淘宝 App 完成日常任务</li>
-            <li>基于规则引擎对任务进行自动发现、分类、优先级评分和策略决策</li>
-            <li>支持多种任务处理器，包括浏览、签到领取、答题和跨 App 跳转</li>
-            <li>任务执行后自动验证进度变化，记录成功/失败样本</li>
-            <li>通过历史样本统计耗时、奖励和成功率，用于后续优先级优化</li>
-            <li>每日运行后自动生成结构化报告，包括 JSON 与文本摘要</li>
-          </ul>
-          <ul class="project-points lang-en">
-            <li>Uses ADB and uiautomator2 to automate Android UI interactions in the Taobao app</li>
-            <li>Discovers, classifies, scores, and decides task strategies through a rule-based engine</li>
-            <li>Supports multiple task handlers, including browsing, check-ins, quizzes, and cross-app flows</li>
-            <li>Verifies progress changes after execution and records success or failure samples</li>
-            <li>Tracks historical duration, rewards, and success rates for priority optimization</li>
-            <li>Generates structured daily reports in both JSON and text formats</li>
+          <div class="project-meta">2025.05 - <span data-en="Present" data-zh="至今">Present</span> · Automation Tool</div>
+          <p class="project-desc" data-en="An Android UI automation tool built with uiautomator2 for automating daily Taobao Coin tasks. It controls an Android device through ADB and supports task discovery, priority scoring, execution verification, learning-based optimization, and daily report generation for repetitive tasks such as browsing, check-ins, and quizzes." data-zh="基于 uiautomator2 的安卓 UI 自动化工具，用于自动完成淘宝淘金币日常任务。工具通过 ADB 远程控制安卓手机，支持任务自动发现、优先级评分、执行验证、学习优化和每日报告生成，可辅助完成浏览、签到、答题等重复性任务。">An Android UI automation tool built with uiautomator2 for automating daily Taobao Coin tasks. It controls an Android device through ADB and supports task discovery, priority scoring, execution verification, learning-based optimization, and daily report generation for repetitive tasks such as browsing, check-ins, and quizzes.</p>
+          <ul class="project-points">
+            <li data-en="Uses ADB and uiautomator2 to automate Android UI interactions in the Taobao app" data-zh="通过 ADB + uiautomator2 实现安卓 UI 自动化，控制淘宝 App 完成日常任务">Uses ADB and uiautomator2 to automate Android UI interactions in the Taobao app</li>
+            <li data-en="Discovers, classifies, scores, and decides task strategies through a rule-based engine" data-zh="基于规则引擎对任务进行自动发现、分类、优先级评分和策略决策">Discovers, classifies, scores, and decides task strategies through a rule-based engine</li>
+            <li data-en="Supports multiple task handlers, including browsing, check-ins, quizzes, and cross-app flows" data-zh="支持多种任务处理器，包括浏览、签到领取、答题和跨 App 跳转">Supports multiple task handlers, including browsing, check-ins, quizzes, and cross-app flows</li>
+            <li data-en="Verifies progress changes after execution and records success or failure samples" data-zh="任务执行后自动验证进度变化，记录成功/失败样本">Verifies progress changes after execution and records success or failure samples</li>
+            <li data-en="Tracks historical duration, rewards, and success rates for priority optimization" data-zh="通过历史样本统计耗时、奖励和成功率，用于后续优先级优化">Tracks historical duration, rewards, and success rates for priority optimization</li>
+            <li data-en="Generates structured daily reports in both JSON and text formats" data-zh="每日运行后自动生成结构化报告，包括 JSON 与文本摘要">Generates structured daily reports in both JSON and text formats</li>
           </ul>
           <div class="project-tech">
             <span>Python</span>
@@ -1285,26 +1219,24 @@
           </div>
         </div>
 
-        <!-- 项目 1 -->
+        <!-- Power Load Forecasting -->
         <div class="project-card">
           <div class="project-top">
-            <span class="project-name">电力负荷预测项目</span>
-            <span class="project-type">自学实践</span>
+            <span class="project-name" data-en="Power Load Forecasting" data-zh="电力负荷预测项目">Power Load Forecasting</span>
+            <span class="project-type" data-en="Self-study" data-zh="自学实践">Self-study</span>
           </div>
           <div class="project-meta">2026.04 - 2026.05</div>
-          <p class="project-desc">
-            基于历史电力负荷数据构建多变量时间序列特征，使用 XGBoost 回归模型进行下一小时负荷预测，并结合网格搜索、交叉验证和可视化分析评估模型效果。
-          </p>
+          <p class="project-desc" data-en="Built multi-variable time-series features from historical power load data, trained an XGBoost regression model for next-hour load prediction, and evaluated model performance through grid search, cross-validation, and visualization." data-zh="基于历史电力负荷数据构建多变量时间序列特征，使用 XGBoost 回归模型进行下一小时负荷预测，并结合网格搜索、交叉验证和可视化分析评估模型效果。">Built multi-variable time-series features from historical power load data, trained an XGBoost regression model for next-hour load prediction, and evaluated model performance through grid search, cross-validation, and visualization.</p>
           <ul class="project-points">
-            <li>构建前 1 小时、前 2 小时、昨日同时间段等时间序列特征</li>
-            <li>使用 Python + XGBoost 训练回归模型</li>
-            <li>结合网格搜索和交叉验证优化模型参数</li>
-            <li>支持 MySQL、Hive、Redis 数据接口，提升系统可复用性与扩展性</li>
+            <li data-en="Engineered time-series features: previous 1h, 2h, and same-period-yesterday" data-zh="构建前 1 小时、前 2 小时、昨日同时间段等时间序列特征">Engineered time-series features: previous 1h, 2h, and same-period-yesterday</li>
+            <li data-en="Trained regression model with Python and XGBoost" data-zh="使用 Python + XGBoost 训练回归模型">Trained regression model with Python and XGBoost</li>
+            <li data-en="Optimized hyperparameters via grid search and cross-validation" data-zh="结合网格搜索和交叉验证优化模型参数">Optimized hyperparameters via grid search and cross-validation</li>
+            <li data-en="Integrated MySQL, Hive, and Redis data interfaces for reusability and scalability" data-zh="支持 MySQL、Hive、Redis 数据接口，提升系统可复用性与扩展性">Integrated MySQL, Hive, and Redis data interfaces for reusability and scalability</li>
           </ul>
           <div class="project-tech">
             <span>Python</span>
             <span>XGBoost</span>
-            <span>时间序列预测</span>
+            <span data-en="Time Series" data-zh="时间序列预测">Time Series</span>
             <span>MySQL</span>
             <span>Hive</span>
             <span>Redis</span>
@@ -1312,26 +1244,24 @@
           <div class="project-link">
             <a href="https://github.com/pangchuanwang/xxx1" target="_blank">
               <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              View on GitHub
+              <span data-en="View on GitHub" data-zh="View on GitHub">View on GitHub</span>
             </a>
           </div>
         </div>
 
-        <!-- 项目 2 -->
+        <!-- Safety Training Platform -->
         <div class="project-card">
           <div class="project-top">
-            <span class="project-name">安全培训考试信息管理平台</span>
-            <span class="project-type">本科毕设</span>
+            <span class="project-name" data-en="Safety Training & Exam Management Platform" data-zh="安全培训考试信息管理平台">Safety Training & Exam Management Platform</span>
+            <span class="project-type" data-en="Undergraduate Thesis" data-zh="本科毕设">Undergraduate Thesis</span>
           </div>
           <div class="project-meta">2023.02 - 2023.06</div>
-          <p class="project-desc">
-            设计并开发基于 B/S 架构、前后端分离的安全培训考试信息管理系统，实现用户管理、课程管理、试题管理、成绩管理等功能。该项目被评为校优秀毕业论文。
-          </p>
+          <p class="project-desc" data-en="Designed and developed a B/S architecture, front-back-end separated safety training and exam management system with user management, course management, question bank management, and grade management. This project was awarded Outstanding Undergraduate Thesis." data-zh="设计并开发基于 B/S 架构、前后端分离的安全培训考试信息管理系统，实现用户管理、课程管理、试题管理、成绩管理等功能。该项目被评为校优秀毕业论文。">Designed and developed a B/S architecture, front-back-end separated safety training and exam management system with user management, course management, question bank management, and grade management. This project was awarded Outstanding Undergraduate Thesis.</p>
           <ul class="project-points">
-            <li>采用前后端分离架构</li>
-            <li>实现用户管理、课程管理、试题管理、成绩管理等模块</li>
-            <li>使用 MySQL 进行数据管理</li>
-            <li>系统具备较好的实用性和可扩展性</li>
+            <li data-en="Adopted front-back-end separated architecture" data-zh="采用前后端分离架构">Adopted front-back-end separated architecture</li>
+            <li data-en="Implemented user, course, question bank, and grade management modules" data-zh="实现用户管理、课程管理、试题管理、成绩管理等模块">Implemented user, course, question bank, and grade management modules</li>
+            <li data-en="Used MySQL for data management" data-zh="使用 MySQL 进行数据管理">Used MySQL for data management</li>
+            <li data-en="Designed for practical usability and extensibility" data-zh="系统具备较好的实用性和可扩展性">Designed for practical usability and extensibility</li>
           </ul>
           <div class="project-tech">
             <span>Java</span>
@@ -1344,37 +1274,36 @@
           <div class="project-link">
             <a href="https://github.com/pangchuanwang/xxx2" target="_blank">
               <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              View on GitHub
+              <span data-en="View on GitHub" data-zh="View on GitHub">View on GitHub</span>
             </a>
           </div>
         </div>
 
-        <!-- 项目 3 -->
+        <!-- Folk Food Heritage Platform -->
         <div class="project-card">
           <div class="project-top">
-            <span class="project-name">基于 Web 的民食传承平台</span>
-            <span class="project-type">省级科创</span>
+            <span class="project-name" data-en="Folk Food Heritage Platform" data-zh="基于 Web 的民食传承平台">Folk Food Heritage Platform</span>
+            <span class="project-type" data-en="Provincial S&T Innovation" data-zh="省级科创">Provincial S&T Innovation</span>
           </div>
-          <div class="project-meta">2022.02 - 2022.06 · 团队组长 / Web 前端开发</div>
-          <p class="project-desc">
-            河北省大学生科技创新项目。负责前端界面设计与开发，将设计稿转化为可交互用户界面，协作后端完成数据交互与页面动态展示。平台用于展示民间食物文化资源，支持用户分享与交流。
-          </p>
+          <div class="project-meta">2022.02 - 2022.06 · <span data-en="Team Lead / Front-end Developer" data-zh="团队组长 / Web 前端开发">Team Lead / Front-end Developer</span></div>
+          <p class="project-desc" data-en="A Hebei provincial college S&T innovation project. Responsible for front-end design and development, converting design mockups into interactive UI and collaborating with back-end for data integration and dynamic content display. The platform showcases folk food culture resources and supports user sharing and interaction." data-zh="河北省大学生科技创新项目。负责前端界面设计与开发，将设计稿转化为可交互用户界面，协作后端完成数据交互与页面动态展示。平台用于展示民间食物文化资源，支持用户分享与交流。">A Hebei provincial college S&T innovation project. Responsible for front-end design and development, converting design mockups into interactive UI and collaborating with back-end for data integration and dynamic content display. The platform showcases folk food culture resources and supports user sharing and interaction.</p>
           <ul class="project-points">
-            <li>负责前端页面设计与开发</li>
-            <li>协作后端实现数据交互</li>
-            <li>推动团队完成项目功能落地</li>
-            <li>提升文化资源展示与传播效果</li>
+            <li data-en="Led front-end page design and development" data-zh="负责前端页面设计与开发">Led front-end page design and development</li>
+            <li data-en="Collaborated with back-end for data integration" data-zh="协作后端实现数据交互">Collaborated with back-end for data integration</li>
+            <li data-en="Drove the team to deliver project features" data-zh="推动团队完成项目功能落地">Drove the team to deliver project features</li>
+            <li data-en="Enhanced cultural resource presentation and outreach" data-zh="提升文化资源展示与传播效果">Enhanced cultural resource presentation and outreach</li>
           </ul>
           <div class="project-tech">
-            <span>Web 前端开发</span>
+            <span data-en="Web Front-end" data-zh="Web 前端开发">Web Front-end</span>
           </div>
           <div class="project-link">
             <a href="https://github.com/pangchuanwang/xxx3" target="_blank">
               <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              View on GitHub
+              <span data-en="View on GitHub" data-zh="View on GitHub">View on GitHub</span>
             </a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -1386,30 +1315,25 @@
     <div class="container">
       <div class="section-card">
         <div class="section-header">
-          <h2>经历</h2>
-          <span class="en">Experience</span>
+          <h2 data-en="Experience" data-zh="经历">Experience</h2>
           <div class="section-divider"></div>
         </div>
 
         <div class="exp-item">
           <div class="exp-time">2019.09 - 2023.06</div>
           <div class="exp-content">
-            <h3>本科班长</h3>
-            <div class="exp-sub">信管 B191 班</div>
-            <p>
-              本科期间担任班长，负责班级组织管理、沟通协调、班会和班级活动组织，参与学校文化活动和志愿服务。曾获校优秀学生干部、校优秀共产党员、校优秀毕业生等荣誉。
-            </p>
+            <h3 data-en="Class Monitor" data-zh="本科班长">Class Monitor</h3>
+            <div class="exp-sub" data-en="Information Management B191" data-zh="信管 B191 班">Information Management B191</div>
+            <p data-en="Served as class monitor throughout undergraduate studies, responsible for class organization, communication, meeting coordination, and activity planning. Participated in campus cultural events and volunteer services. Received awards including Outstanding Student Leader, Outstanding Party Member, and Outstanding Graduate." data-zh="本科期间担任班长，负责班级组织管理、沟通协调、班会和班级活动组织，参与学校文化活动和志愿服务。曾获校优秀学生干部、校优秀共产党员、校优秀毕业生等荣誉。">Served as class monitor throughout undergraduate studies, responsible for class organization, communication, meeting coordination, and activity planning. Participated in campus cultural events and volunteer services. Received awards including Outstanding Student Leader, Outstanding Party Member, and Outstanding Graduate.</p>
           </div>
         </div>
 
         <div class="exp-item">
           <div class="exp-time">2023.09 - 2025.09</div>
           <div class="exp-content">
-            <h3>通信员兼文书</h3>
-            <div class="exp-sub">服役经历 · 甘肃省兰州市</div>
-            <p>
-              服役期间担任通信员兼文书，负责日常文书、通信协调、活动保障与组织执行工作。参与多项主题教育、表彰、迎新等活动的策划与保障，锻炼了严谨细致的工作习惯、执行能力和团队协作能力。2025 年荣获"四有优秀士兵"并获得嘉奖。
-            </p>
+            <h3 data-en="Communication Specialist & Clerk" data-zh="通信员兼文书">Communication Specialist & Clerk</h3>
+            <div class="exp-sub" data-en="Military Service · Lanzhou, Gansu" data-zh="服役经历 · 甘肃省兰州市">Military Service · Lanzhou, Gansu</div>
+            <p data-en="Served as communication specialist and clerk during military service, handling daily clerical work, communication coordination, event logistics, and organizational execution. Participated in planning and supporting multiple education campaigns, recognition ceremonies, and welcoming events. Developed meticulous work habits, execution capability, and teamwork skills. Awarded 'Outstanding Soldier' with commendation in 2025." data-zh="服役期间担任通信员兼文书，负责日常文书、通信协调、活动保障与组织执行工作。参与多项主题教育、表彰、迎新等活动的策划与保障，锻炼了严谨细致的工作习惯、执行能力和团队协作能力。2025 年荣获"四有优秀士兵"并获得嘉奖。">Served as communication specialist and clerk during military service, handling daily clerical work, communication coordination, event logistics, and organizational execution. Participated in planning and supporting multiple education campaigns, recognition ceremonies, and welcoming events. Developed meticulous work habits, execution capability, and teamwork skills. Awarded 'Outstanding Soldier' with commendation in 2025.</p>
           </div>
         </div>
       </div>
@@ -1423,20 +1347,19 @@
     <div class="container">
       <div class="section-card">
         <div class="section-header">
-          <h2>荣誉奖项</h2>
-          <span class="en">Honors</span>
+          <h2 data-en="Honors & Awards" data-zh="荣誉奖项">Honors & Awards</h2>
           <div class="section-divider"></div>
         </div>
 
         <ul class="honor-list">
-          <li>校优秀毕业生</li>
-          <li>校优秀共产党员</li>
-          <li>校优秀学生干部</li>
-          <li>多次获得校优秀学生奖学金</li>
-          <li>全国竞赛省级单项奖学金</li>
-          <li>"四有优秀士兵"并获得嘉奖</li>
-          <li>军体运动会"双杠"项目第三名</li>
-          <li>校优秀毕业论文</li>
+          <li data-en="Outstanding Graduate" data-zh="校优秀毕业生">Outstanding Graduate</li>
+          <li data-en="Outstanding Communist Party Member" data-zh="校优秀共产党员">Outstanding Communist Party Member</li>
+          <li data-en="Outstanding Student Leader" data-zh="校优秀学生干部">Outstanding Student Leader</li>
+          <li data-en="University Outstanding Student Scholarship (multiple times)" data-zh="多次获得校优秀学生奖学金">University Outstanding Student Scholarship (multiple times)</li>
+          <li data-en="National Competition Provincial Individual Scholarship" data-zh="全国竞赛省级单项奖学金">National Competition Provincial Individual Scholarship</li>
+          <li data-en="'Four Outstanding Soldier' Award with Commendation" data-zh=""四有优秀士兵"并获得嘉奖">'Four Outstanding Soldier' Award with Commendation</li>
+          <li data-en="3rd Place in Parallel Bars — Military Sports Meet" data-zh="军体运动会"双杠"项目第三名">3rd Place in Parallel Bars — Military Sports Meet</li>
+          <li data-en="Outstanding Undergraduate Thesis" data-zh="校优秀毕业论文">Outstanding Undergraduate Thesis</li>
         </ul>
       </div>
     </div>
@@ -1449,18 +1372,17 @@
     <div class="container">
       <div class="section-card">
         <div class="section-header">
-          <h2>兴趣爱好</h2>
-          <span class="en">Interests</span>
+          <h2 data-en="Interests" data-zh="兴趣爱好">Interests</h2>
           <div class="section-divider"></div>
         </div>
 
         <div class="interest-tags">
-          <span class="interest-tag">健身</span>
-          <span class="interest-tag">长跑</span>
-          <span class="interest-tag">半马 1h40min</span>
-          <span class="interest-tag">户外登山徒步</span>
-          <span class="interest-tag">羽毛球</span>
-          <span class="interest-tag">游泳</span>
+          <span class="interest-tag" data-en="Fitness" data-zh="健身">Fitness</span>
+          <span class="interest-tag" data-en="Long-distance Running" data-zh="长跑">Long-distance Running</span>
+          <span class="interest-tag">Half Marathon 1h40min</span>
+          <span class="interest-tag" data-en="Hiking & Mountaineering" data-zh="户外登山徒步">Hiking & Mountaineering</span>
+          <span class="interest-tag" data-en="Badminton" data-zh="羽毛球">Badminton</span>
+          <span class="interest-tag" data-en="Swimming" data-zh="游泳">Swimming</span>
         </div>
       </div>
     </div>
@@ -1473,8 +1395,7 @@
     <div class="container">
       <div class="section-card">
         <div class="section-header">
-          <h2>联系方式</h2>
-          <span class="en">Contact</span>
+          <h2 data-en="Contact" data-zh="联系方式">Contact</h2>
           <div class="section-divider"></div>
         </div>
 
@@ -1499,7 +1420,7 @@
   </section>
 
   <!-- ========================================
-       Footer — 深蓝底白字 + 社交链接
+       Footer
        ======================================== -->
   <footer class="footer">
     <div class="container">
@@ -1518,35 +1439,56 @@
   </footer>
 
   <!-- ========================================
-       JS: 平滑滚动 + 移动端菜单
+       JS: Language Toggle + Smooth Scroll + Mobile Menu
        ======================================== -->
   <script>
-    // 语言切换（Projects 区域中英文）
+    // Language switching
     function switchLang(lang) {
+      document.body.setAttribute('data-lang', lang);
+      document.documentElement.lang = (lang === 'zh') ? 'zh-CN' : 'en';
+
+      // Update toggle buttons
       var btns = document.querySelectorAll('.lang-toggle button');
       btns.forEach(function(b) { b.classList.remove('active'); });
-      if (lang === 'en') {
-        document.body.classList.add('lang-en');
+      if (lang === 'zh') {
         btns[1].classList.add('active');
       } else {
-        document.body.classList.remove('lang-en');
         btns[0].classList.add('active');
       }
+
+      // Replace text for all elements with data-en/data-zh
+      var els = document.querySelectorAll('[data-en][data-zh]');
+      els.forEach(function(el) {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+
+      // Persist
+      try { localStorage.setItem('lang', lang); } catch(e) {}
     }
 
-    // 移动端汉堡菜单切换
+    // Restore language from localStorage on load
+    (function() {
+      var saved = null;
+      try { saved = localStorage.getItem('lang'); } catch(e) {}
+      if (saved === 'zh') {
+        switchLang('zh');
+      }
+      // Default is English (already set in HTML)
+    })();
+
+    // Mobile hamburger menu
     document.getElementById('navToggle').addEventListener('click', function() {
       document.getElementById('navLinks').classList.toggle('open');
     });
 
-    // 点击导航链接后关闭菜单
+    // Close mobile menu on link click
     document.querySelectorAll('.nav-links a').forEach(function(link) {
       link.addEventListener('click', function() {
         document.getElementById('navLinks').classList.remove('open');
       });
     });
 
-    // 平滑滚动（兼容旧浏览器）
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
